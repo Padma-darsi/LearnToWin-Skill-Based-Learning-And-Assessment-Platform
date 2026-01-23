@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from "../api/axiosInstance"; 
+
+
 import "./Sidebar.css";
 import { useNavigate } from "react-router-dom";
 
@@ -15,8 +17,8 @@ export default function Sidebar() {
 
   useEffect(() => {
     const loadSidebar = async () => {
-      const res = await axios.get(
-        "http://localhost:5000/api/student/sidebar"
+      const res = await axiosInstance.get(
+        "/student/sidebar"
       );
       setSidebar(Array.isArray(res.data) ? res.data : []);
     };

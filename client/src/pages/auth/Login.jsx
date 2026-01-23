@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../redux/slices/authSlice";
-import axios from "axios";
+import axiosInstance from "../../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -20,8 +20,8 @@ function Login() {
   setLoading(true);
 
   try {
-    const res = await axios.post(
-      "http://localhost:5000/api/auth/login",
+    const res = await axiosInstance.post(
+      "/auth/login",
       { email, password }
     );
 

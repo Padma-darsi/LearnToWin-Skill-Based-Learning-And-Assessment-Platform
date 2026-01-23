@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+/*import { useLocation } from "react-router-dom";
 
 function Result() {
   const { state } = useLocation();
@@ -11,4 +11,4 @@ function Result() {
   );
 }
 
-export default Result;
+export default Result;*/

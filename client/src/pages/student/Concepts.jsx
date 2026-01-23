@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axiosInstance from "../../api/axiosInstance";
 import ReactMarkdown from "react-markdown";
 
 function Concepts({ selectedTopic }) {
@@ -8,7 +8,7 @@ function Concepts({ selectedTopic }) {
   useEffect(() => {
     if (!selectedTopic) return;
 
-    axios.get(`http://localhost:5000/api/topics/${selectedTopic}`)
+    axiosInstance.get(`/topics/${selectedTopic}`)
       .then(res => setContent(res.data.content))
       .catch(err => console.log(err));
   }, [selectedTopic]);
