@@ -1,0 +1,10 @@
+.student-layout {
+  display: flex;
+}
+
+.student-sidebar {
+  width: 260px;
+  min-height: 100vh;
+  margin-left: 0;   /* GAP FIX */
+}
+

@@ -1,0 +1,271 @@
+/* ============================
+   SIDEBAR LAYOUT
+============================ */
+
+.sidebar {
+  position: fixed;
+  top: 64px;
+  left: 12px;
+  width: 260px;
+  height: calc(100vh - 64px);
+  background: #06103c;
+  padding: 26px 20px;
+  border-radius: 14px;
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.06);
+
+  overflow-y: auto;
+  z-index: 900;
+}
+
+/* TITLE */
+.sidebar-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.8px;
+  margin-bottom: 26px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+}
+
+/* ============================
+   SKILL BLOCK
+============================ */
+
+.skill {
+  margin-bottom: 14px;
+}
+
+/* SKILL HEADER */
+.skill-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #e5e7eb;
+  font-size: 15px;
+  font-weight: 600;
+
+  padding: 12px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.skill-title:hover {
+  background: rgba(7, 14, 90, 0.16);
+  color: #ffffff;
+  transform: translateX(6px);
+  box-shadow: inset 3px 0 0 #38bdf8;
+}
+
+/* ============================
+   EXPANDED CONTENT
+============================ */
+
+.skill-content {
+  margin-top: 8px;
+  margin-left: 10px;
+  padding-left: 12px;
+  border-left: 3px solid rgba(56,189,248,0.9);
+}
+
+/* ============================
+   CONCEPTS
+============================ */
+
+.concepts-title {
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 700;
+
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.concepts-title:hover {
+  background: rgba(13, 12, 101, 0.22);
+  transform: translateX(6px);
+  box-shadow: inset 3px 0 0 #38bdf8;
+}
+
+/* ============================
+   TOPICS
+============================ */
+
+.topics {
+  list-style: none;
+  margin-top: 10px;
+  padding-left: 12px;
+}
+
+.topic-item {
+  padding: 9px 12px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+
+  color: #e5e7eb;
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.topic-item:hover {
+  background: rgba(18, 8, 124, 0.22);
+  transform: translateX(6px);
+  box-shadow: inset 3px 0 0 #38bdf8;
+}
+
+/* EMPTY */
+.empty {
+  font-size: 13px;
+  color: #c7d2fe;
+  padding: 6px 10px;
+}
+
+/* ============================
+   QUIZ BUTTON
+============================ */
+
+.quiz {
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 700;
+
+  background: rgba(255,255,255,0.08);
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.quiz:hover {
+ background: rgba(14, 7, 94, 0.22);
+  transform: translateX(6px);
+  box-shadow: inset 3px 0 0 #38bdf8;
+}
+
+/* ============================
+   SCROLLBAR (CLEAN)
+============================ */
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.25);
+  border-radius: 6px;
+}
+
+/* ============================
+   RESPONSIVE MEDIA QUERIES
+============================ */
+
+/* SMALL LAPTOPS */
+@media (max-width: 1200px) {
+  .sidebar {
+    width: 240px;
+    padding: 22px 18px;
+  }
+
+  .sidebar-title {
+    font-size: 18px;
+  }
+}
+
+/* TABLETS */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 220px;
+    left: 8px;
+    padding: 20px 16px;
+  }
+
+  .sidebar-title {
+    font-size: 17px;
+  }
+
+  .skill-title {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .concepts-title,
+  .topic-item,
+  .quiz {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+}
+
+/* MOBILE DEVICES */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    left: 6px;
+    top: 58px;
+    height: calc(100vh - 58px);
+    padding: 18px 14px;
+    border-radius: 12px;
+  }
+
+  .sidebar-title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .skill-title {
+    font-size: 13px;
+    gap: 8px;
+  }
+
+  .concepts-title,
+  .topic-item,
+  .quiz {
+    font-size: 12px;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 180px;
+    left: 4px;
+    padding: 16px 12px;
+  }
+
+  .sidebar-title {
+    font-size: 15px;
+  }
+
+  .skill-title,
+  .concepts-title,
+  .topic-item,
+  .quiz {
+    font-size: 11px;
+    padding: 8px 10px;
+  }
+}
+
+ 
