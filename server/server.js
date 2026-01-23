@@ -23,6 +23,12 @@ app.use(cors());
 app.use(express.json());
 
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    message: "LearnToWin Backend is running 🚀"
+  });
+});
 
 
 
