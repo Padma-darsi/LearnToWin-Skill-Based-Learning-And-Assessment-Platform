@@ -19,22 +19,23 @@ dotenv.config();
 
 const app = express();
 
- import cors from "cors";
+ 
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin) return callback(null, true); // Postman, mobile apps
-    if (
-      origin.startsWith("http://localhost:") ||
-      origin.endsWith(".vercel.app")
-    ) return callback(null, true);
-
+    if (!origin) return callback(null, true); // Postman / mobile
+    if (origin.startsWith("http://localhost:") || origin.endsWith(".vercel.app")) {
+      return callback(null, true);
+    }
     callback(new Error("Not allowed by CORS"));
   },
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
+
+app.options("*", cors()); // very important for preflight
+
 
 
 
