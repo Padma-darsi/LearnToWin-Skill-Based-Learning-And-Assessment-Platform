@@ -13,7 +13,7 @@ import studentSkillRoutes from "./routes/studentSkillRoutes.js";
 import studentTopicRoutes from "./routes/studentTopicRoutes.js";
 
 import quizRoutes from "./routes/quizRoutes.js";
-import adminSeedRoutes from "./routes/admin.seed.routes.js";
+
 
 
 
@@ -50,7 +50,7 @@ app.get("/", (req, res) => {
   });
 });
 
-app.use("/api/seed", adminSeedRoutes);
+
 
 
 
