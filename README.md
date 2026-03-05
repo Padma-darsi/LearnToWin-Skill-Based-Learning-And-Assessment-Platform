@@ -131,8 +131,11 @@ Response to Client
 ### 📚 Dashboard & Skills Overview
 ![Dashboard](./screenshots/dashboard.png)
 
-### 📝 Quiz Page
-![Quiz Page](./screenshots/quiz.png)
+### 📝 Quiz Pages
+
+| Quiz Start | Quiz Feedback |
+|------------|---------------|
+| ![Quiz Start](./screenshots/quiz-start.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
 
 
 ## 🌐 Live Demo
