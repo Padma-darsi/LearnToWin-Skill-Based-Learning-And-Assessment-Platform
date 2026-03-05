@@ -129,7 +129,7 @@ Response to Client
 | ![Login Page](./screenshots/login.png) | ![Register Page](./screenshots/register.png) |
 
 ### 📚 Dashboard & Skills Overview
-![Dashboard](./screenshots/studentdashboard.png)
+![Dashboard](./screenshots/sdashboard.png)
 
 ### 📝 Quiz Pages
 
