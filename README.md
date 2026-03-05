@@ -75,43 +75,40 @@ LearnToWin/
 ```
 ## ⚙️ Setup Instructions
 
-### 1️⃣ Clone the Repository
+### Clone the Repository
 ```bash
 git clone https://github.com/Padma-darsi/LearnToWin-Skill-Based-Learning-And-Assessment-Platform.git
 cd LearnToWin-Skill-Based-Learning-And-Assessment-Platform
 ```
 
-### 2️⃣ Backend Setup
+### Backend Setup
 ```bash
 cd server
 npm install
 ```
 
 ### Create a .env file in server/:
-
+```bash
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 ```
+
 ### Start the backend server:
 ```bash
 npm run dev
 ```
 
-### 3️⃣ Frontend Setup
+### Frontend Setup
 ```bash
 cd ../client
 npm install
 npm start
 ```
 
----
-
-## 2️⃣ Application Flow (`🔄 Application Flow`)  
-Show a simple diagram of how client requests flow through backend:
+## 🔄 Application Flow
 
 ```markdown
-### 🔄 Application Flow
 Client (React Frontend)
         ↓
 API Request (Axios instance)
@@ -123,9 +120,8 @@ Controller Logic
 MongoDB Database
         ↓
 Response to Client
-
+```
 ## 📸 Screenshots
-
 
 ### 🔐 Authentication (Login & Register)
 | Login | Register |
@@ -137,21 +133,17 @@ Response to Client
 
 ### 📝 Quiz Page
 ![Quiz Page](./screenshots/quiz.png)
-4️⃣ Live Demo (🌐 Live Demo)
 
-Add your deployed links:
 
 ## 🌐 Live Demo
 
 🚀 **Live Application:**  
-https://learn-to-win-frontend.vercel.app/
+https://learn-to-win-skill-based-learning-a.vercel.app/
 
 🖥️ **Frontend:** Deployed on Vercel  
 ⚙️ **Backend:** Deployed on Render  
 🗄️ **Database:** MongoDB Atlas
-5️⃣ Contributing (📝 Contributing)
 
-Explain how others can contribute:
 
 ## 📝 Contributing
 - Fork the repository
