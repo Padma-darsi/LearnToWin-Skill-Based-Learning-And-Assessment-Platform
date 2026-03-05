@@ -140,6 +140,17 @@ Response to Client
 |------------|---------------|
 | ![Quiz Starting](./screenshots/quiz-start.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
 
+### 🛠 Admin Pages
+
+| Admin Dashboard | Skill Management |
+|-----------------|-----------------|
+| ![Admin Dashboard](./screenshots/admin-dashboard.png) | ![Skill Management](./screenshots/skill-management.png) |
+
+### 📚 Admin Content Management
+
+| Topic Management | Quiz Management |
+|-----------------|----------------|
+| ![Topic Management](./screenshots/topic-management.png) | ![Quiz Management](./screenshots/quiz-management.png) |
 
 ## 🌐 Live Demo
 
