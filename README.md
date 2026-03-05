@@ -129,13 +129,16 @@ Response to Client
 | ![Login Page](./screenshots/login.png) | ![Register Page](./screenshots/register.png) |
 
 ### 📚 Dashboard & Skills Overview
-![Dashboard](./screenshots/sdashboard.png)
+| student dashboard | Topic View |
+|------------|---------------|
+| ![studentdash](./screenshots/student-dashboard.png) | ![topic-view](./screenshots/topic-view.png) |
+
 
 ### 📝 Quiz Pages
 
-| Quiz Start | Quiz Feedback |
+| Quiz Starting Page | Quiz Feedback Page|
 |------------|---------------|
-| ![Quiz Start](./screenshots/quiz-start.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
+| ![Quiz Starting](./screenshots/quiz-start.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
 
 
 ## 🌐 Live Demo
