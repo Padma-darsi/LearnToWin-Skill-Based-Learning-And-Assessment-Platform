@@ -49,8 +49,10 @@ function Register() {
        <div className="floating-light light7"></div>
 
       <div className="auth-card">
-        <h2>Create Account</h2>
-
+      <h2>LearnToWin 🎓</h2>
+  <h3>
+    Start learning and testing your skills ✏️📚. Explore topics, take quizzes ✅, and grow your knowledge 🚀 — all in one platform.
+  </h3>
         {error && <p className="error-text">{error}</p>}
 
         <form onSubmit={handleSubmit}>
