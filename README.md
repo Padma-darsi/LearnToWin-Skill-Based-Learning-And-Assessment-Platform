@@ -13,6 +13,7 @@
 - Developed a full-stack skill-based learning platform using React.js, Node.js, Express.js, and MongoDB, enabling students to navigate skills → topics → content efficiently.
 - Implemented secure role-based authentication (Admin / Student) using JWT, ensuring proper access control and separating administrative content management from learner-facing functionalities.
 - Built an admin-driven dynamic content and quiz-based assessment system, allowing real-time management of skills, topics, and quizzes without redeployment, ensuring scalability and maintainability.
+- Integrated AI-powered quiz analysis and adaptive practice quiz generation using OpenRouter/GPT APIs, helping students identify weak areas and receive personalized learning assessments.
 
 ---
 
@@ -25,6 +26,8 @@
   Admin-managed quizzes linked to topics, supporting multiple-choice questions, scoring, and instant feedback.
 - ⚡ **Scalable Full-Stack Architecture**  
   React frontend seamlessly integrated with Node.js, Express, and MongoDB backend with RESTful APIs.
+- 🤖 **AI-Powered Quiz Analysis & Adaptive Learning**
+  Integrated AI-based answer analysis that explains mistakes, provides improvement tips, recommends topics, and generates personalized adaptive practice quizzes based on weak areas.
 
 ## 🛠 Tech Stack
 
