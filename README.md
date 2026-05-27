@@ -26,8 +26,8 @@
   Admin-managed quizzes linked to topics, supporting multiple-choice questions, scoring, and instant feedback.
 - ⚡ **Scalable Full-Stack Architecture**  
   React frontend seamlessly integrated with Node.js, Express, and MongoDB backend with RESTful APIs.
-- ⚡ **Scalable Full-Stack Architecture**  
-  React frontend seamlessly integrated with Node.js, Express, and MongoDB backend with RESTful APIs.
+- ⚡ **🤖 AI-Powered Quiz Analysis & Adaptive Learning**  
+  Integrated AI-based answer analysis that explains mistakes, provides improvement tips, recommends topics, and generates personalized adaptive practice quizzes based on weak areas.
 
 ## 🛠 Tech Stack
 
