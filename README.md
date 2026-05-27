@@ -31,14 +31,15 @@
 
 ## 🛠 Tech Stack
 
-| Category            | Technologies Used                         |
-|---------------------|-------------------------------------------|
-| Frontend            | React.js, JavaScript (ES6+), HTML5, CSS3 |
-| Backend             | Node.js, Express.js                       |
-| Database            | MongoDB, Mongoose ODM                     |
-| Authentication      | JSON Web Tokens (JWT)                     |
-| API Architecture    | RESTful APIs                              |
-| Version Control     | Git, GitHub                               |
+| Category            | Technologies Used                                 |
+|---------------------|---------------------------------------------------|
+| Frontend            | React.js, JavaScript (ES6+), HTML5, CSS3          |
+| Backend             | Node.js, Express.js                               |
+| Database            | MongoDB, Mongoose ODM                             |
+| Authentication      | JSON Web Tokens (JWT)                             |
+| AI Integration      | OpenRouter API, OpenAI SDK, GPT-based AI Analysis |
+| API Architecture    | RESTful APIs                                      |
+| Version Control     | Git, GitHub                                       |
 
 ---
 
@@ -142,6 +143,8 @@ Response to Client
 | Quiz Starting Page | Quiz Feedback Page|
 |------------|---------------|
 | ![Quiz Starting](./screenshots/quiz-start.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
+
+### 
 
 ### 🛠 Admin Pages
 
