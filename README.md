@@ -1,7 +1,7 @@
 # 🚀 LearnToWin
 ## 🎓 Skill-Based Learning & Assessment Platform
 
-**LearnToWin** is a secure full-stack MERN application that enables students to learn through structured skills, topics, and interactive assessments, while providing admins with full content management capabilities.
+**LearnToWin** is a secure AI-powered full-stack MERN learning platform where students can learn skills, take interactive quizzes, receive AI-based performance analysis, and practice personalized adaptive assessments, while admins manage content dynamically.
 
 ![Vercel](https://img.shields.io/badge/Frontend-Vercel-blue)
 ![Render](https://img.shields.io/badge/Backend-Render-green)
