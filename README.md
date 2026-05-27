@@ -138,13 +138,14 @@ Response to Client
 | ![studentdash](./screenshots/student-dashboard.png) | ![topic-view](./screenshots/topic-view.png) |
 
 
-### 📝 Quiz Pages
+### 🤖 AI-Powered Assessment & Adaptive Learning
 
 | Quiz Starting Page | Quiz Feedback Page|
 |------------|---------------|
 | ![Quiz Starting](./screenshots/quiz-start.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
 
-### 
+### 🤖 AI analysis page
+  ![AI Analysis](./screenshots/AI analysis page)
 
 ### 🛠 Admin Pages
 
