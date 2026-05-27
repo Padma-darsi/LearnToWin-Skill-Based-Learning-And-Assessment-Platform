@@ -24,7 +24,7 @@
   Admins can create, update, and delete skills and topics; students can browse content in a structured flow.
 - 📝 **Dynamic Quiz & Assessment System**  
   Admin-managed quizzes linked to topics, supporting multiple-choice questions, scoring, and instant feedback.
-- ⚡ **🤖 AI-Powered Quiz Analysis & Adaptive Learning**  
+- 🤖 **AI-Powered Quiz Analysis & Adaptive Learning**  
   Integrated AI-based answer analysis that explains mistakes, provides improvement tips, recommends topics, and generates personalized adaptive practice quizzes based on weak areas.
 - ⚡ **Scalable Full-Stack Architecture**  
   React frontend seamlessly integrated with Node.js, Express, and MongoDB backend with RESTful APIs.
