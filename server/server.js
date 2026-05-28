@@ -14,7 +14,7 @@ import studentTopicRoutes from "./routes/studentTopicRoutes.js";
 
 import quizRoutes from "./routes/quizRoutes.js";
 
-
+import aiRoutes from "./routes/aiRoutes.js";
 
 
 dotenv.config();
@@ -70,6 +70,8 @@ app.use("/api/student", studentTopicRoutes);
 
 
 app.use("/api", quizRoutes);
+
+app.use("/api/ai", aiRoutes);
 
 const PORT = process.env.PORT || 5000;
 
