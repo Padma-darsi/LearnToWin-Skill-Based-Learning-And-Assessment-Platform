@@ -145,7 +145,7 @@ Response to Client
 | ![Quiz Starting](./screenshots/quiz-start.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
 
 ### 🤖 AI analysis page
-  ![AI Analysis](./screenshots/AI analysis page)
+  ![AI Analysis](./screenshots/AI-analysis-page.png)
 
 ### 🛠 Admin Pages
 
