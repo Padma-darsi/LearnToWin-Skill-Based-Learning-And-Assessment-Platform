@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://learntowin-skill-based-learning-and-l2n6.onrender.com/api",
+  baseURL: "https://learntowin-skill-based-learning-and-8h8a.onrender.com",
 });
 
 axiosInstance.interceptors.request.use((config) => {
