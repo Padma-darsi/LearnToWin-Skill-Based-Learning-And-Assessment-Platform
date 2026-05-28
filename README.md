@@ -142,7 +142,7 @@ Response to Client
 
 | Quiz Starting Page | Quiz Feedback Page|
 |------------|---------------|
-| ![Quiz Starting](./screenshots/quiz-start.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
+| ![Quiz Starting](./screenshots/admin-quizz.png) | ![Quiz Feedback](./screenshots/quiz-feedback.png) |
 
 ### 🤖 AI analysis page
   ![AI Analysis](./screenshots/AI-analysis-page.png)
