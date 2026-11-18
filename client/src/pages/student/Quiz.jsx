@@ -480,11 +480,12 @@ export default function Quiz() {
     
 /* GENERATE AI QUIZ */
 
+    
 const handleGenerateAIQuiz = async () => {
   try {
     setLoadingAIQuiz(true);
 
-    // Get the actual wrong answers from the completed quiz
+    // Get the student's incorrect answers
     const wrongAnswers = questions
       .map((q, i) => ({
         question: q.question,
@@ -497,7 +498,7 @@ const handleGenerateAIQuiz = async () => {
           item.selectedAnswer !== item.correctAnswer
       );
 
-    // Get recommended weak topics from AI analysis
+    // Get recommended weak topics
     const weakTopics = [
       ...new Set(
         aiAnalysis.flatMap(
@@ -505,6 +506,22 @@ const handleGenerateAIQuiz = async () => {
         )
       ),
     ];
+
+    // Debugging: inspect request data
+    console.log("Skill:", skillTitle);
+    console.log("Wrong Answers:", wrongAnswers);
+    console.log("Weak Topics:", weakTopics);
+
+    // Validate before making API request
+    if (!skillTitle || skillTitle === "Skill") {
+      alert("Skill name is missing.");
+      return;
+    }
+
+    if (wrongAnswers.length === 0) {
+      alert("No incorrect answers found. Please complete the quiz first.");
+      return;
+    }
 
     const response = await axiosInstance.post(
       "/ai/generate-practice-quiz",
@@ -518,7 +535,6 @@ const handleGenerateAIQuiz = async () => {
     const aiQuiz = response.data.quiz;
 
     clearInterval(timerRef.current);
-
     setQuestions(aiQuiz);
     setCurrent(0);
     setSelected("");
@@ -530,7 +546,8 @@ const handleGenerateAIQuiz = async () => {
     setIsAIQuiz(true);
 
   } catch (error) {
-    console.log(error);
+    console.log("AI Quiz Error:", error.response?.data || error);
+
     alert(
       error.response?.data?.message ||
       "AI quiz generation failed"
