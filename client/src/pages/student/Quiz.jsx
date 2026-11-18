@@ -477,67 +477,69 @@ export default function Quiz() {
 
   /* GENERATE AI QUIZ */
 
-  const handleGenerateAIQuiz =
-    async () => {
+    
+/* GENERATE AI QUIZ */
 
-      try {
+const handleGenerateAIQuiz = async () => {
+  try {
+    setLoadingAIQuiz(true);
 
-        setLoadingAIQuiz(true);
+    // Get the actual wrong answers from the completed quiz
+    const wrongAnswers = questions
+      .map((q, i) => ({
+        question: q.question,
+        selectedAnswer: answers[i] || "Not Answered",
+        correctAnswer: q.options[q.correctAnswer],
+        options: q.options,
+      }))
+      .filter(
+        (item) =>
+          item.selectedAnswer !== item.correctAnswer
+      );
 
-        const weakTopics =
-          aiAnalysis.flatMap(
-            (item) =>
-              item.recommendedTopics || []
-          );
+    // Get recommended weak topics from AI analysis
+    const weakTopics = [
+      ...new Set(
+        aiAnalysis.flatMap(
+          (item) => item.recommendedTopics || []
+        )
+      ),
+    ];
 
-        const response =
-          await axiosInstance.post(
-            "/ai/generate-practice-quiz",
-            {
-              skill: skillTitle,
-              weakTopics,
-            }
-          );
-
-        const aiQuiz =
-          response.data.quiz;
-
-        clearInterval(timerRef.current);
-
-        // IMPORTANT RESETS
-
-        setQuestions(aiQuiz);
-
-        setCurrent(0);
-
-        setSelected("");
-
-        setAnswers([]);
-
-        setShowResult(false);
-
-        setAiAnalysis([]);
-
-        setTimeLeft(15);
-
-        setStarted(false);
-
-        setIsAIQuiz(true);
-
-      } catch (error) {
-
-        console.log(error);
-
-        alert(
-          "AI quiz generation failed"
-        );
-
-      } finally {
-
-        setLoadingAIQuiz(false);
-
+    const response = await axiosInstance.post(
+      "/ai/generate-practice-quiz",
+      {
+        skill: skillTitle,
+        weakTopics,
+        wrongAnswers,
       }
-    };
+    );
+
+    const aiQuiz = response.data.quiz;
+
+    clearInterval(timerRef.current);
+
+    setQuestions(aiQuiz);
+    setCurrent(0);
+    setSelected("");
+    setAnswers([]);
+    setShowResult(false);
+    setAiAnalysis([]);
+    setTimeLeft(15);
+    setStarted(false);
+    setIsAIQuiz(true);
+
+  } catch (error) {
+    console.log(error);
+    alert(
+      error.response?.data?.message ||
+      "AI quiz generation failed"
+    );
+  } finally {
+    setLoadingAIQuiz(false);
+  }
+};
+
 
   /* RESULT SCREEN */
 

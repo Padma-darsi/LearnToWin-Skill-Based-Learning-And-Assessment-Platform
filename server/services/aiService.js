@@ -76,70 +76,138 @@ For every question provide:
 /* AI PRACTICE QUIZ */
 /* ================================= */
 
-export const generatePracticeQuizAI =
-  async ({
-    skill,
-    weakTopics,
-  }) => {
 
-    const prompt = `
-You are an AI quiz generator.
+/* ================================= */
+/* AI PRACTICE QUIZ */
+/* ================================= */
 
-Generate 5 NEW multiple choice questions.
+export const generatePracticeQuizAI = async ({
+  skill,
+  weakTopics = [],
+  wrongAnswers = [],
+}) => {
 
-Skill:
+  const prompt = `
+You are an expert technical assessment question generator.
+
+Your task is to create a personalized practice quiz
+based on a student's actual mistakes.
+
+SELECTED SKILL:
 ${skill}
 
-Focus ONLY on these weak topics:
-${weakTopics.join("\n")}
+STUDENT'S ACTUAL WRONG ANSWERS:
+${JSON.stringify(wrongAnswers, null, 2)}
 
-IMPORTANT RULES:
-- Return ONLY valid JSON
-- No markdown
-- No extra text
-- No triple backticks
+RECOMMENDED WEAK TOPICS:
+${JSON.stringify(weakTopics, null, 2)}
 
-JSON format:
+STRICT CONTENT RULES:
+
+1. Generate exactly 5 NEW multiple-choice questions.
+
+2. Every question MUST belong to the selected skill:
+   "${skill}"
+
+3. Analyze the actual wrong answers to identify the
+   specific concepts the student does not understand.
+
+4. Prioritize concepts from the actual wrong answers.
+   Use recommended weak topics only as additional guidance.
+
+5. Do NOT generate generic programming questions
+   unrelated to the selected skill.
+
+6. Do NOT introduce unrelated topics just to generate
+   five questions.
+
+7. For example, if the selected skill is Node.js:
+   - Questions must test Node.js concepts.
+   - Relevant topics may include Node.js modules,
+     event loop, asynchronous programming,
+     file system, streams, buffers, and Node.js APIs.
+   - Do NOT generate generic for-loop, while-loop,
+     or variable questions unless they are directly
+     relevant to a specific mistake.
+
+8. Create NEW questions. Do not copy the original
+   questions or simply change their wording.
+
+9. Questions must test understanding and application,
+   not just memorization.
+
+10. Keep questions beginner-friendly.
+
+OUTPUT FORMAT:
+
+Return ONLY a valid JSON array.
 
 [
   {
-    "question": "",
+    "question": "Question text",
     "options": [
-      "",
-      "",
-      "",
-      ""
+      "Option 1",
+      "Option 2",
+      "Option 3",
+      "Option 4"
     ],
     "correctAnswer": 0
   }
 ]
 
-Rules:
-- Exactly 4 options
-- correctAnswer must be option index
-- Questions must be beginner friendly
-- Questions must test understanding
+FINAL VALIDATION:
+
+- Exactly 5 questions.
+- Exactly 4 options per question.
+- correctAnswer must be an integer from 0 to 3.
+- Every question must be relevant to ${skill}.
+- Every question must target the student's weak concepts.
+- No unrelated programming topics.
+- No repeated questions.
+- Return JSON only.
 `;
 
-    const completion =
-      await client.chat.completions.create({
-        model: "nvidia/nemotron-3-ultra-550b-a55b:free",
-        messages: [
-          {
-            role: "user",
-            content: prompt,
-          },
-        ],
-      });
+  const completion =
+    await client.chat.completions.create({
+      model: "nvidia/nemotron-3-ultra-550b-a55b:free",
+      messages: [
+        {
+          role: "user",
+          content: prompt,
+        },
+      ],
+      temperature: 0.2,
+    });
 
-    const rawText =
-      completion.choices[0].message.content;
+  const rawText =
+    completion.choices?.[0]?.message?.content;
 
-    const cleanedText = rawText
-      .replace(/```json/g, "")
-      .replace(/```/g, "")
-      .trim();
+  if (!rawText) {
+    throw new Error("AI returned an empty response");
+  }
 
-    return JSON.parse(cleanedText);
+  const cleanedText = rawText
+    .replace(/```json/gi, "")
+    .replace(/```/g, "")
+    .trim();
 
-  };
+  const quiz = JSON.parse(cleanedText);
+
+  if (
+    !Array.isArray(quiz) ||
+    quiz.length !== 5 ||
+    quiz.some(
+      (q) =>
+        typeof q.question !== "string" ||
+        !Array.isArray(q.options) ||
+        q.options.length !== 4 ||
+        !Number.isInteger(q.correctAnswer) ||
+        q.correctAnswer < 0 ||
+        q.correctAnswer > 3
+    )
+  ) {
+    throw new Error("AI returned an invalid quiz format");
+  }
+
+  return quiz;
+};
