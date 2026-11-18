@@ -51,7 +51,7 @@ For every question provide:
 
     const completion =
       await client.chat.completions.create({
-        model: "openai/gpt-3.5-turbo",
+        model: "nvidia/nemotron-3-ultra-550b-a55b:free",
         messages: [
           {
             role: "user",
@@ -123,7 +123,7 @@ Rules:
 
     const completion =
       await client.chat.completions.create({
-        model: "openai/gpt-3.5-turbo",
+        model: "nvidia/nemotron-3-ultra-550b-a55b:free",
         messages: [
           {
             role: "user",
